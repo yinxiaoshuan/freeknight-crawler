@@ -1,0 +1,10 @@
+org.freeknight.framework.forum.daemon.AutohomeTopicWorker
+org.freeknight.framework.forum.daemon.B55TopicWorker
+org.freeknight.framework.forum.daemon.XCarTopicWorker
+org.freeknight.framework.forum.daemon.TopsageTopicWorker
+org.freeknight.framework.forum.daemon.TiexueTopicWorker
+org.freeknight.framework.forum.daemon.SouthcnTopicWorker
+org.freeknight.framework.forum.daemon.PcautoTopicWorker
+org.freeknight.framework.forum.daemon.EnoyaTopicWorker
+org.freeknight.framework.forum.daemon.ChinaunixTopicWorker
+org.freeknight.framework.forum.daemon.B8264TopicWorker
