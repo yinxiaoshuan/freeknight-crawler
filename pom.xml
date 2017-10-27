@@ -18,7 +18,6 @@
 		<logback.version>1.0.13</logback.version>
 		<mysql.connector.java.version>5.1.33</mysql.connector.java.version>
 	</properties>
-	
 	<url>http://yinxiaoshuan.github.com</url>
 
 	<dependencyManagement>
