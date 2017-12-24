@@ -90,7 +90,7 @@
 				<executions>
 					<execution>
 						<id>validate</id>
-						<phase>package</phase>
+						<phase>validate</phase>
 						<configuration>
 							<configLocation>checkstyle.xml</configLocation>
 							<encoding>UTF-8</encoding>
@@ -99,7 +99,7 @@
 							<linkXRef>false</linkXRef>
 						</configuration>
 						<goals>
-							<goal>check</goal>
+							<goal>package</goal>
 						</goals>
 					</execution>
 				</executions>
