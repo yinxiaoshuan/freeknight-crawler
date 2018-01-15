@@ -10,17 +10,12 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.freeknight.framework</groupId>
-			<artifactId>crawler-global</artifactId>
-			<version>${parent.version}</version>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -29,10 +24,6 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>log4j-over-slf4j</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
