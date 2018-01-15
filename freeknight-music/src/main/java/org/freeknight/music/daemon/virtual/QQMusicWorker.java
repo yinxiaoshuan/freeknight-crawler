@@ -7,11 +7,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.freeknight.framework.crawler.db.MusicMapper;
-import org.freeknight.framework.crawler.db.entity.SingerEntity;
 import org.freeknight.music.cause.ShutdownException;
 import org.freeknight.music.daemon.AbstractVirtualWorker;
 import org.freeknight.music.daemon.DaemonWorkerEngine;
+import org.freeknight.music.mysql.MySQL;
+import org.freeknight.music.mysql.entity.SingerEntity;
 import org.freeknight.music.task.MusicTask;
 import org.freeknight.music.task.QQMusicTask;
 import org.freeknight.music.task.model.MusicTaskInModel;
@@ -22,11 +22,9 @@ public class QQMusicWorker
 		extends AbstractVirtualWorker
 {
 
-	Logger											logger			= LoggerFactory.getLogger ( QQMusicWorker.class );
+	Logger											logger	= LoggerFactory.getLogger ( QQMusicWorker.class );
 
-	MusicMapper									musicMapper	= new MusicMapper ( );
-
-	BlockingQueue< MusicTask >	tasks				= new LinkedBlockingQueue< MusicTask > ( );
+	BlockingQueue< MusicTask >	tasks		= new LinkedBlockingQueue< MusicTask > ( );
 
 	@Override
 	public String getName ( )
@@ -37,7 +35,7 @@ public class QQMusicWorker
 	@Override
 	public void init ( )
 	{
-		List< SingerEntity > singers = musicMapper.querySingerBySite ( DaemonWorkerEngine.QQ.getSite ( ) );
+		List< SingerEntity > singers = MySQL.querySingerBySite ( DaemonWorkerEngine.QQ.getSite ( ) );
 		if ( singers == null )
 		{
 			logger.warn ( Thread.currentThread ( ).getName ( )

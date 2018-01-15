@@ -4,9 +4,9 @@ package org.freeknight.music.task.parser;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.freeknight.framework.crawler.common.json.GsonConverter;
 import org.freeknight.music.daemon.DaemonWorkerEngine;
 import org.freeknight.music.task.model.MusicTaskOutModel;
+import org.freeknight.music.toolkit.GsonConverter;
 
 public class QQMusicParser
 		implements MusicParser

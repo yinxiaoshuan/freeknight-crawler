@@ -3,14 +3,12 @@ package org.freeknight.framework.crawler.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.freeknight.framework.crawler.db.entity.MusicEntity;
 import org.freeknight.framework.crawler.db.entity.SingerEntity;
 
 public class MusicMapper
@@ -72,55 +70,4 @@ public class MusicMapper
 		return singers;
 	}
 
-	public static void insertMusics (
-			List< MusicEntity > musics )
-	{
-		Connection conn = null;
-		PreparedStatement pstmt;
-		try
-		{
-			Class.forName ( name );
-			conn = DriverManager.getConnection ( url, user, password );
-
-			final String sql =
-					"insert into crawier.t_music (music_id, music_mid, music_name, album_id, album_mid, singer_id, singer_mid, site) values (?,?,?,?,?,?,?,?)";
-			pstmt = conn.prepareStatement ( sql );
-			for ( final MusicEntity music : musics )
-			{
-				pstmt.setString ( 1, music.getMusic_id ( ) );
-				pstmt.setString ( 2, music.getMusic_mid ( ) );
-				pstmt.setString ( 3, music.getMusic_name ( ) );
-				pstmt.setString ( 4, music.getAlbum_id ( ) );
-				pstmt.setString ( 5, music.getAlbum_mid ( ) );
-				pstmt.setString ( 6, music.getSinger_id ( ) );
-				pstmt.setString ( 7, music.getSinger_mid ( ) );
-				pstmt.setInt ( 8, music.getSite ( ) );
-				pstmt.addBatch ( );
-			}
-
-			pstmt.executeBatch ( );
-		}
-		catch ( final ClassNotFoundException e )
-		{
-			e.printStackTrace ( );
-		}
-		catch ( final SQLException e )
-		{
-			e.printStackTrace ( );
-		}
-		finally
-		{
-			if ( conn != null )
-			{
-				try
-				{
-					conn.close ( );
-				}
-				catch ( final SQLException e )
-				{
-					e.printStackTrace ( );
-				}
-			}
-		}
-	}
 }

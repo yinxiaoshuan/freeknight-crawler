@@ -4,7 +4,6 @@ package org.freeknight.music.daemon;
 import java.util.concurrent.ThreadPoolExecutor;
 
 import org.freeknight.music.cause.ShutdownException;
-import org.freeknight.music.global.ApplicationToolkit;
 
 /**
  * 抽象的后台工作者基类, 为子类工作者提供统一的线程任务调度.
@@ -28,7 +27,7 @@ abstract public class AbstractVirtualWorker
 
 				for ( ;; )
 				{
-					ApplicationToolkit.sleep ( 100 );// 避免CPU100%
+					// ApplicationToolkit.sleep ( 100 );// 避免CPU100%
 					try
 					{
 						doProcess ( );

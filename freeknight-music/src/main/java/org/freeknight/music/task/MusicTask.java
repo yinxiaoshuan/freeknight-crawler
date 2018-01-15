@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.freeknight.framework.crawler.db.MusicMapper;
-import org.freeknight.framework.crawler.db.entity.MusicEntity;
+import org.freeknight.music.mysql.MySQL;
+import org.freeknight.music.mysql.entity.MusicEntity;
 import org.freeknight.music.task.fetch.MusicFetcher;
 import org.freeknight.music.task.model.MusicTaskInModel;
 import org.freeknight.music.task.model.MusicTaskOutModel;
@@ -65,7 +65,7 @@ public class MusicTask
 				music.setSite ( outModel.getSite ( ) );
 				musics.add ( music );
 			}
-			MusicMapper.insertMusics ( musics );
+			MySQL.insertMusics ( musics );
 
 			totalNum += musics.size ( );
 		}
