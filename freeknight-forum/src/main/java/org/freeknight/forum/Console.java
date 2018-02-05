@@ -37,7 +37,6 @@ public class Console
 				{
 					System.out.println ( Thread.currentThread ( ).getName ( ) + ": [" + daemon.getName ( ) + "] shutdown." );
 				}
-
 			}, "Crawler-Shutdown" ) );
 
 			daemon.start ( engine.getForumName ( ) );

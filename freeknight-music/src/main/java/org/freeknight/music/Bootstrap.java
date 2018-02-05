@@ -4,7 +4,7 @@ package org.freeknight.music;
 import org.freeknight.music.daemon.DaemonWorker;
 import org.freeknight.music.daemon.DaemonWorkerEngine;
 
-public class MusicConsole
+public class Bootstrap
 {
 
 	public static void main (
